@@ -1,5 +1,5 @@
 """
-URL configuration for certamen2 project.
+URL configuration for semana7 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,8 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from miapp import views
 
 urlpatterns = [
+    path('', views.index, name="home"),
+    path('carreras/', views.carreras, name="carreras"),
+    path('docentes/', views.docentes, name="docentes"),
     path('admin/', admin.site.urls),
-    path('')
 ]

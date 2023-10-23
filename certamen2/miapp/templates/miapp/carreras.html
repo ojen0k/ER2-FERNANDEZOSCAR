@@ -1,0 +1,36 @@
+{% extends 'miapp/base.html' %}
+
+{% block content %}
+
+<h1>Carreras</h1>
+{% if total_carreras == 0 %}
+<div class="alert alert-warning" role="alert">
+No hay carreras en el área
+</div>
+{% else %}
+
+<div class="alert alert-success" role="alert">
+    Hay {{total_carreras}} carreras en el área
+</div>
+<div>
+    <table class="table table-hover">
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Duración</th>
+        </tr>
+        {% for carrera in carreras %}
+
+        <tr>
+            <td>{{carrera.codigo}}</td>
+            <td>{{carrera.nombre}}</td>
+            <td>{{carrera.duracion}} semestres</td>
+        </tr>
+        {% endfor %}
+        
+      </table>
+</div>
+
+{% endif %}
+
+{% endblock %}
