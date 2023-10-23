@@ -19,3 +19,12 @@ class Docente(models.Model):
     def __str__(self) -> str:
         return self.nombre + " " + self.apellido
     
+class Comunicado(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    titulo = models.CharField(max_length=30)
+    detalle = models.CharField(max_length=250)
+    detalle_corto = models.CharField(max_length=50)
+
+    def __str__(self) -> str:
+        return self.titulo
+    

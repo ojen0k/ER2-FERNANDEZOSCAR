@@ -4,4 +4,13 @@
 }
 #tituloheader{
     text-align: center;
+    background-color: aqua;
+    
+}
+
+#logousm{
+    height: 100px;
+   width: 100px;
+   float: left;
+
 }
