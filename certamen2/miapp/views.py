@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Carrera
+from .models import Comunicado, Carrera
 
 # Create your views here.
 
@@ -12,6 +12,16 @@ def index(request):
     }
 
     return render(request,'miapp/index.html', data)
+
+
+def comunicados(request):
+    title = "Comunicados"
+
+    data = {
+        "title": title,
+    }
+
+    return render(request,'miapp/comunicados.html', data)
 
 def carreras(request):
     title = "Carreras"
