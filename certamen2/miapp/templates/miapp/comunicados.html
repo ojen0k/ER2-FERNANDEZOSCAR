@@ -15,41 +15,59 @@ No hay comunicados
 <div>
 
 
-{% for comunicado in comunicados %}
+  <div class = "container">
+    <div class = "row">
+    {% for comunicado in comunicados %}
+    <div class="col-md-4 col-sm-12">
+      <div class="card" style="margin: 10px;">
+        <div class="card-body">
+          <h5 class="card-title">{{comunicado.titulo}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{comunicado.entidad}}</h6>
+          <p class="card-text">{{comunicado.detalle}}</p>
+          <li class="list-group-item">{{comunicado.publicado_por}}</li>
+  
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+    </div>
 
-<div class="card" style="padding: 5%;">
-  <div class="card-body">
-    <h5 class="card-title">{{comunicado.titulo}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{comunicado.publicado_por}}</h6>
-    <p class="card-text">{{comunicado.detalle}}</p>
-  </div>
-</div>
+    <div class = "container">
+      <div class = "row">
+      {% for i in comunicados2 %}
+      <div class="col-md-4 col-sm-12">
+        <div class="card" style="margin: 10px;">
+          <div class="card-body">
+            <h5 class="card-title">{{i.titulo}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{i.entidad}}</h6>
+            <p class="card-text">{{i.detalle}}</p>
+            <li class="list-group-item">{{i.publicado_por}}</li>
+    
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+      </div>
 
-{% endfor %}
-
-{% for i in comunicados2 %}
-
-<div class="card" style="padding: 5%;">
-  <div class="card-body">
-    <h5 class="card-title">{{i.titulo}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{i.publicado_por}}</h6>
-    <p class="card-text">{{i.detalle}}</p>
-  </div>
-</div>
-
-{% endfor %}
-
-{% for j in comunicados3 %}
-
-<div class="card" style="padding: 5%;">
-  <div class="card-body">
-    <h5 class="card-title">{{j.titulo}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{j.publicado_por}}</h6>
-    <p class="card-text">{{j.detalle}}</p>
-  </div>
-</div>
-
-{% endfor %}
+      <div class = "container">
+        <div class = "row">
+        {% for j in comunicados3 %}
+        <div class="col-md-4 col-sm-12">
+          <div class="card" style="margin: 10px;">
+            <div class="card-body">
+              <h5 class="card-title">{{j.titulo}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{j.entidad}}</h6>
+              <p class="card-text">{{j.detalle}}</p>
+              <li class="list-group-item">{{j.publicado_por}}</li>
+      
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        </div>
+        </div>
 
 
 

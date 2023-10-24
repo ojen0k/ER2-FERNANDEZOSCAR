@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Informaticas, Mecanicas, Electronicas
+from .models import Informaticas, Mecanicas, Electronicas, Entidades
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -75,5 +75,16 @@ def com_mecanica(request):
     }
 
     return render(request,'miapp/com_mec.html' ,data)
+
+def entidades(request):
+    title = "Entidades Universidad"
+    entidades = Entidades.objects.all()
+
+    data ={
+        "title": title,
+        "entidades":entidades,
+    }
+    return render(request, 'miapp/header.html', data)
+
 
 

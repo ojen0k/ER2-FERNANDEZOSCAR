@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<img src="{% static 'miapp/img/logo-usm-informatica.png' %}" alt="">
+<img id="logo" src="{% static 'miapp/img/logo-usm-informatica.png' %}" alt="">
 {% if total_comunicados == 0 %}
 <div class="alert alert-warning" role="alert">
 No hay comunicados
@@ -15,17 +15,23 @@ No hay comunicados
 <div>
 
 
-{% for comunicado in comunicados %}
+<div class = "container">
+  <div class = "row">
+  {% for comunicado in comunicados %}
+  <div class="col-md-4 col-sm-12">
+    <div class="card" style="margin: 10px;">
+      <div class="card-body">
+        <h5 class="card-title">{{comunicado.titulo}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{comunicado.entidad}}</h6>
+        <p class="card-text">{{comunicado.detalle}}</p>
+        <li class="list-group-item">{{comunicado.publicado_por}}</li>
 
-<div class="card" style="padding: 5%;">
-  <div class="card-body">
-    <h5 class="card-title">{{comunicado.titulo}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{comunicado.publicado_por}}</h6>
-    <p class="card-text">{{comunicado.detalle}}</p>
+      </div>
+    </div>
   </div>
-</div>
-
-{% endfor %}
+  {% endfor %}
+  </div>
+  </div>
 
 {% endif %}
 

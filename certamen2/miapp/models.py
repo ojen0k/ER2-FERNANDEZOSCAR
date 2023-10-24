@@ -1,6 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User, Group
 
+class Entidades(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    entidad = models.ForeignKey(Group, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.entidad
 
 
 class Informaticas(models.Model):
