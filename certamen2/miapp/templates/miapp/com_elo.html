@@ -1,8 +1,9 @@
 {% extends 'miapp/base.html' %}
+{% load static %}
 
 {% block content %}
 
-
+<img src="{% static 'miapp/img/logo-usm-electronica.png' %}" id="elo" alt="">
 {% if total_comunicados == 0 %}
 <div class="alert alert-warning" role="alert">
 No hay comunicados
@@ -27,36 +28,6 @@ No hay comunicados
 
 {% endfor %}
 
-{% for i in comunicados2 %}
-
-<div class="card" style="padding: 5%;">
-  <div class="card-body">
-    <h5 class="card-title">{{i.titulo}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{i.publicado_por}}</h6>
-    <p class="card-text">{{i.detalle}}</p>
-  </div>
-</div>
-
-{% endfor %}
-
-{% for j in comunicados3 %}
-
-<div class="card" style="padding: 5%;">
-  <div class="card-body">
-    <h5 class="card-title">{{j.titulo}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{j.publicado_por}}</h6>
-    <p class="card-text">{{j.detalle}}</p>
-  </div>
-</div>
-
-{% endfor %}
-
-
-
 {% endif %}
 
-
-
-
-
-{% endblock content %}
+{% endblock %}

@@ -8,39 +8,37 @@
   <div class="container-fluid, nav">
     <a class="navbar-brand" href="{% url 'comunicados' %}">Inicio</a>
     <a class="navbar-brand" href="{% url 'admin:index' %}"">Administración</a>
+    <a class="navbar-brand" href="{% url 'informatica' %}"">Informatica</a>
+    <a class="navbar-brand" href="{% url 'electronica' %}"">Electronica</a>
+    <a class="navbar-brand" href="{% url 'mecanica' %}"">Mecanica</a>
   </div>
 </nav>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Departamento
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-      </ul>
-    </div>
-  </div>
-</nav>
-<form action="procesar_formulario.php" method="post">
-  <label for="opciones">Entidad:</label>
-  <select name="opciones" id="opciones">
-    {% for entidad in entidades %}
-      <option value={{entidad.nombre}}>{{entidad.nombre}}</option>
-    {% endfor %}
-  </select>
 
-  <br>
-</form>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+
+<div class="container mt-5">
+  <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Selecciona una opción
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="{% url 'informatica' %}">Opción 1</a>
+          <a class="dropdown-item" href="{% url 'electronica' %}">Opción 2</a>
+          <a class="dropdown-item" href="{% url 'mecanica' %}">Opción 3</a>
+      </div>
+  </div>
+</div>
+
+
 
 
 
